@@ -5,5 +5,6 @@
   'depends': ['todo_stage'],
   'data': [
     'views/todo_web.xml',
+    'views/todo_extend.xml',
   ],
 }
