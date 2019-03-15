@@ -10,3 +10,7 @@ class Todo(http.Controller):
     @http.route('/hello', auth='public')
     def hello(self, **kwargs):
         return request.render('todo_website.hello')
+
+    @http.route('/hellocms/<page>', auth='public')
+    def hellocms(self, page, **kwargs):
+        return request.render(page)
