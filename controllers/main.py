@@ -18,3 +18,11 @@ class Todo(http.Controller):
     @http.route('/hello', auth='public', website=True)
     def hello(self, **kwargs):
         return request.render('todo_website.hello')
+
+    @http.route('/todos', auth='user', website=True)
+    def index(self, **kwargs):
+        TodoTask = request.env['todo.task']
+        tasks = TodoTask.search([])
+        return request.render(
+            'todo_website.index',
+            {'tasks': tasks})
