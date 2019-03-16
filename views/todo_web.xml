@@ -70,7 +70,47 @@
               data-success_page="/todos"
               enctype="multipart/form-data">
 
-            <!-- From data will go here -->
+              <!-- From data will go here -->
+              <div class="form-group form-field">
+                <div class="col-md-3 col-sm-4 text-right">
+                  <label class="control-label" for="name">To do*</label>
+                </div>
+                <div class="col-md-7 col-sm-8">
+                  <input name="name" type="text" required="True"
+                    class="o_website_form_input form-control"/>
+                </div>
+              </div>
+              <!-- Attachment file upload field -->
+              <div class="form-group form-field">
+                <div class="col-md-3 col-sm-4 text-right">
+                  <label class="control-label" for="file_upload">
+                    Attach file
+                  </label>
+                </div>
+                <div class="col-md-7 col-sm-8">
+                  <input name="file_upload" type="file"
+                    class="o_website_form_input form-control"/>
+                </div>
+              </div>
+
+              <!-- User selection field -->
+              <div class="form-group form-field">
+                <div class="col-md-3 col-sm-4 text-right">
+                  <label class="control-label" for="user_id">
+                    For Person
+                  </label>
+                </div>
+                <div class="col-md-7 col-sm-8">
+                  <select name="user_id"
+                    class="o_website_form_input form-control">
+                    <t t-foreach="users" t-as="user">
+                      <option t-att-value="user.id">
+                        <t t-esc="user.name"/>
+                      </option>
+                    </t>
+                  </select>
+                </div>
+              </div>
 
               <!-- Submit button -->
               <div class="form-group">
