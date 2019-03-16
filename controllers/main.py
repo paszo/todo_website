@@ -34,3 +34,9 @@ class Todo(http.Controller):
         return http.request.render(
             'todo_website.detail',
             {'task': task})
+
+    @http.route('/todo/add', auth="user", website=True)
+    def add(self, **kwargs):
+        users = request.env['res.users'].search([])
+        return request.render(
+            'todo_website.add', {'users': users})
