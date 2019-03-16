@@ -44,4 +44,15 @@
     </t>
   </template>
 
+
+  <template id="detail" name="Todo Task Detail">
+    <t t-call="website.layout">
+      <div id="wrap" class="container">
+        <h1 t-field="task.name"/>
+        <p>Responsible: <span t-field="task.user_id"/></p>
+        <p>Deadline:<span t-field="task.date_deadline"/></p>
+      </div>
+    </t>
+  </template>
+
 </odoo>

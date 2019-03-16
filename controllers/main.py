@@ -26,3 +26,11 @@ class Todo(http.Controller):
         return request.render(
             'todo_website.index',
             {'tasks': tasks})
+
+    @http.route('/todo/<model("todo.task"):task>',
+        auth="user", #default , but mede explicit here
+        website=True)
+    def detail(self, task, **kwargs):
+        return http.request.render(
+            'todo_website.detail',
+            {'task': task})
